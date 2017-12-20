@@ -36,6 +36,7 @@ In a fresh WordPress install, you'll need to do a few basic setup items:
 
 - Create a page called 'Homepage'
 - Create a menu called 'primary-navigation'
+- Install Advanced Custom Fields plugin (see below)
 
 ### Advanced Custom Fields
 
