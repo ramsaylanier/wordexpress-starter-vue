@@ -17,9 +17,13 @@ export default {
   props: ['page'],
   methods: {
     renderHeader () {
-      return this.page.post_meta.filter(meta => {
+      const header = this.page.post_meta.filter(meta => {
         return meta.meta_key === 'page_header'
-      })[0].meta_value
+      })
+
+      if (header.length > 0) {
+        return header[0].meta_value
+      }
     },
     renderHeaderImage () {
       const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/page_header_bg.png')
