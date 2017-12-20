@@ -1,20 +1,32 @@
 <template>
-  <div>
-    <div v-html="parseContent(page.post_content)"/>
+  <div class="wrapper">
+    <div class="page-content">
+      <post-content :content="page.post_content"/> 
+    </div>
   </div>
 </template>
 
 <script>
-import parseContent from '@/helpers/parseContent'
+import PostContent from '@/components/post/PostContent'
 export default {
-  name: 'default-page',
+  name: 'front-page',
   props: ['page'],
-  methods: {
-    parseContent
+  components: {
+    PostContent
   }
 }
 </script>
 
-<style>
+<style scoped>
+  .wrapper{
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+  }
 
+  .page-content{
+    grid-column: 2;
+    max-width: 900px;
+    justify-self: center;
+    padding: 2rem 0;
+  }
 </style>

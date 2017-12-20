@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     getLayout: function () {
-      const layout = this.post.layout ? this.post.layout.meta_value : 'default'
+      const layout = this.post.layout ? this.post.layout.meta_value : 'DefaultPage'
       return Layouts[layout]
     }
   }
