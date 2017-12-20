@@ -1,0 +1,20 @@
+query Post($name: String) {
+  post(name: $name){
+    id
+    post_name
+    post_parent
+    post_content
+    post_title
+    thumbnail{
+      src
+      sizes{
+        size
+        file
+      }
+    }
+    post_meta{
+      meta_value
+      meta_key
+    }
+  }
+}

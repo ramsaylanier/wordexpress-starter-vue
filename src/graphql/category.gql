@@ -1,0 +1,23 @@
+query Category($term_id: Int!){
+  category(term_id: $term_id){
+    name
+    slug
+    posts{
+      id
+      post_name
+      post_date
+      post_title
+      categories{
+        term_id
+        name
+      }
+      thumbnail{
+        src
+        sizes{
+          size
+          file
+        }
+      }
+    }
+  }
+}
