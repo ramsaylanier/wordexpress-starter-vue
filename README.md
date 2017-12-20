@@ -44,7 +44,9 @@ VuePress uses some custom post fields. You're best bet is to install the Advance
 
 ### Layout Components
 
-Currently there are only [two layout components](https://github.com/ramsaylanier/VuePress/tree/master/src/components/page/layouts) - a `DefaultPage` layout and a `PageWithHeader` layout. 
+Currently there are only [two layout components](https://github.com/ramsaylanier/VuePress/tree/master/src/components/page/layouts) - a `DefaultPage` layout and a `PageWithHeader` layout. In order to set the layout component, simply type the name of the component in the custom field. For example:
+
+<img width="965" alt="screen shot 2017-12-19 at 8 54 27 pm" src="https://user-images.githubusercontent.com/2359852/34187337-dadf8bec-e4fe-11e7-84a0-3f1d885437d7.png">
 
 ## License
 
