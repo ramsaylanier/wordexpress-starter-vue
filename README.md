@@ -53,11 +53,17 @@ In the backend:
 <img width="965" alt="screen shot 2017-12-19 at 8 54 27 pm" src="https://user-images.githubusercontent.com/2359852/34187337-dadf8bec-e4fe-11e7-84a0-3f1d885437d7.png">
 
 
-Example Results:
+Result:
 
 <img width="1428" alt="screen shot 2017-12-19 at 9 06 14 pm" src="https://user-images.githubusercontent.com/2359852/34187651-80791a72-e500-11e7-8c9d-ec7bdbeb62be.png">
 
 ### PostList
+
+In the backend: 
+
+<img width="962" alt="screen shot 2017-12-19 at 9 10 04 pm" src="https://user-images.githubusercontent.com/2359852/34187773-0762ff30-e501-11e7-8b82-bd16d2b77c94.png">
+
+Result:
 
 <img width="1440" alt="screen shot 2017-12-19 at 9 08 38 pm" src="https://user-images.githubusercontent.com/2359852/34187730-d36b6442-e500-11e7-9af3-a52674dbfd6a.png">
 
