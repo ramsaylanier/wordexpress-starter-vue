@@ -1,10 +1,10 @@
 {
   "name": "vue-ssr-starter-kit",
-  "version": "0.0.0",
-  "description": "A Vue.js project wuth vue 2.0, vue-router and vuex for server side rendering.",
+  "version": "0.0.1",
+  "description": "WordPress with Vue",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doabit/vue-ssr-starter-kit.git"
+    "url": "git+https://github.com/ramsaylanier/VuePress"
   },
   "keywords": [
     "vue",
@@ -13,14 +13,15 @@
     "webpack",
     "starter",
     "server-side",
-    "boilerplate"
+    "boilerplate",
+    "wordpress"
   ],
-  "author": "doabit <doinsist@gmail.com>",
+  "author": "ramsay lanier <ramsaylanier@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/doabit/vue-ssr-starter-kit/issues"
+    "url": "https://github.com/ramsaylanier/VuePress/issues"
   },
-  "homepage": "https://github.com/doabit/vue-ssr-starter-kit#readme",
+  "homepage": "https://github.com/ramsaylanier/VuePress#readme",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server",
     "dev": "node server",
