@@ -1,0 +1,16 @@
+query Posts($post_type: String, $limit: Int, $skip: Int, $order: OrderInput) {
+  posts(post_type: $post_type, limit: $limit, skip: $skip, order: $order){
+    id
+    post_name
+    post_title
+    post_date
+    post_meta{
+      meta_value
+      meta_key
+    }
+    categories{
+      term_id
+      name
+    }
+  }
+}

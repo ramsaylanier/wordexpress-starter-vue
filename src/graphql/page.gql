@@ -1,0 +1,17 @@
+query Page($name: String){
+  post(name: $name){
+    id
+    post_title
+    post_content
+    thumbnail{
+      src
+    }
+    post_meta{
+      meta_key
+      meta_value
+    }
+    layout{
+      meta_value
+    }
+  }
+}

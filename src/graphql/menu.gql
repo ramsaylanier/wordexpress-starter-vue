@@ -1,0 +1,22 @@
+query Menu($menu: String!) {
+  menus(name: $menu) {
+    items {
+      id
+      order
+      post_title
+      navitem{
+        id
+        post_title
+        post_name
+      }
+      children{
+        id
+        linkedId
+        navitem{
+          post_title
+          post_name
+        }
+      }
+    }
+  }
+}
