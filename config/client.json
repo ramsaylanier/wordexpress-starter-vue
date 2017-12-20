@@ -1,1 +1,0 @@
-{"wordexpressServerHost":"localhost:3000","public":{"uploads":"http://wordexpress.dev/wp-content/uploads/","amazonS3":false},"private":{"wp_prefix":"wp_","database":{"name":"wpexpress_starter","username":"root","password":"","host":"127.0.0.1"}}}
