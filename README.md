@@ -1,8 +1,6 @@
-# vue-ssr-starter-kit
+# VuePress
 
-> A Vue.js project with vue 2.0, vue-router and vuex starter kit for server side rendering. 
-
-[![Build Status](https://travis-ci.org/doabit/vue-ssr-starter-kit.svg?branch=master)](https://travis-ci.org/doabit/vue-ssr-starter-kit)
+> WordPress development using Vue, GraphQL, and Express.
 
 ## Node Version Requirement
 
@@ -10,6 +8,10 @@
 node 6.*
 node 7.*
 ```
+
+## Config
+
+Using the `/config/sample.config.json` file as an example, create a `development.json` and `production.json` file. The file should contain connection details to your WordPress MySQL database for the respective environments. 
 
 ## Build Setup
 
@@ -25,10 +27,6 @@ npm start
 npm install
 npm run dev
 ```
-
-## Reference resources
-
-[vue-hackernews-2.0](https://github.com/vuejs/vue-hackernews-2.0)
 
 ## License
 
