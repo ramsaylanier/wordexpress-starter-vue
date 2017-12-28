@@ -1,7 +1,10 @@
 <template>
-  <ul class="menu" v-if="menuItems">
-    <li class="item" v-for="item in menuItems" :key="item.id">
-      <router-link :to="`/${item.navitem.post_name}`">{{item.navitem.post_title}}</router-link>
+  <ul :class="$style.menu">
+    <li>
+      <router-link :to="{path: '/'}">Home</router-link>
+    </li>
+    <li v-for="item in menuItems" :key="item.id">
+      <router-link :to="`/${item.navitem.post_title.toLowerCase()}`">{{item.navitem.post_title}}</router-link>
     </li>
   </ul>
 </template>
@@ -13,21 +16,22 @@ export default {
 }
 </script>
 
-<style scoped lang="sass">
-  @import "../../styles/colors";
-
+<style module>
   .menu{
+    list-style: none;
     padding: 0;
     display: flex;
   }
 
-  .item{
-    padding: 0rem 1rem;
-    a{
-      text-decoration: none;
-      color: $secondary-color;
-      font-size: .9rem;
-    }
+  .menu li:not(:last-of-type){
+    margin-right: 1rem;
+  }
+
+  .menu li a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--copy-font);
+    font-size: .9rem;
   }
 </style>
 

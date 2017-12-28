@@ -1,11 +1,10 @@
 <template>
   <div class="wrapper">
-    <div class="header" :style="renderHeaderImage()">
-      <div class="header-content">
-        <h2 class="title">{{page.post_title}}</h2>
+    <div class="page-header" :style="renderHeaderImage()">
+      <div class="page-header-content"  v-html="renderHeader()">
       </div>
     </div>
-    <div class="body">
+    <div class="page-content">
       <post-content :content="page.post_content"/> 
     </div>
   </div>
@@ -27,7 +26,7 @@ export default {
       }
     },
     renderHeaderImage () {
-      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/post_header_bg.png')
+      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/page_header_bg.png')
       return `backgroundImage: url('${imageSrc}');`
     }
   },
@@ -43,38 +42,30 @@ export default {
     grid-template-columns: 5% 90% 5%;
   }
 
-  .header{
+  .page-header{
     grid-column: 1 / 4;
     grid-row: 1;
     padding: 2rem;
-
   }
 
-  .header-content{
-    max-width: 800px;
+  .page-header-content{
+    max-width: 900px;
     margin: 0 auto;
+  }
+
+  .page-content{
+    grid-column: 2;
+    max-width: 900px;
+    justify-self: center;
     padding: 2rem 0;
   }
+</style>
 
-  .title{
+<style>
+  .page-header h2{
     margin: 0;
     font-weight: 100;
     letter-spacing: .015em;
-  }
-
-  .body{
-    grid-column: 2;
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    justify-self: center;
-    margin: -4rem auto 0rem auto;
-    z-index: 2;
-  }
-
-  .post-content{
-    padding: 2rem;
-    margin-top: 2rem;
-    background-color: white;
+    /* color: white; */
   }
 </style>

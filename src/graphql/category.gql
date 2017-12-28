@@ -7,10 +7,6 @@ query Category($term_id: Int!){
       post_name
       post_date
       post_title
-      post_meta{
-        meta_value
-        meta_key
-      }
       categories{
         term_id
         name
