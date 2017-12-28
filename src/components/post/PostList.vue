@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="page-content">
-      <posts-container>
+      {{getMeta()}}
+      <posts-container :postType="postType">
         <transition
           appear
           slot-scope="data"
@@ -9,7 +10,11 @@
           :css="false"
         >
           <div class="posts" v-if="!data.isLoading">
-            <post-list-item v-for="post in data.posts" :key="post.id" :post="post"/>
+            <component 
+              :is="Layouts[layoutName]"
+              v-for="post in data.posts"
+              :post="post"
+              :key="post.id"/>
           </div>
         </transition>
       </posts-container>
@@ -19,11 +24,31 @@
 
 <script>
 import PostsContainer from './containers/PostsContainer'
-import PostListItem from './PostListItem'
+import Layouts from './layouts/layouts'
 import {TweenMax, Power4} from 'gsap'
 export default {
   name: 'post-list',
+  props: ['page'],
+  data () {
+    return {
+      postType: 'post',
+      layoutName: 'PostListItem',
+      Layouts
+    }
+  },
   methods: {
+    getMeta: function () {
+      this.page.post_meta.map(meta => {
+        switch (meta.meta_key) {
+          case 'post_type':
+            this.postType = meta.meta_value
+            break
+          case 'post_item_component':
+            this.layoutName = meta.meta_value
+            break
+        }
+      })
+    },
     enter: function (el, done) {
       TweenMax.staggerFromTo(el.children, 2, {
         y: 20,
@@ -37,15 +62,17 @@ export default {
     }
   },
   components: {
-    PostsContainer, PostListItem
+    PostsContainer
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="sass">
   .wrapper{
     display: grid;
+    background-color: var(--dark-color);
     grid-template-columns: 5% 1fr 5%;
+    margin-top: 4rem;
   }
 
   .posts{

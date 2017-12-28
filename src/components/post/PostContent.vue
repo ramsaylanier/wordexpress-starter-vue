@@ -5,6 +5,7 @@
 <script>
 import parseContent from '@/helpers/parseContent'
 import {map} from 'lodash'
+import hljs from 'highlightjs'
 
 export default {
   name: 'post-content',
@@ -12,17 +13,22 @@ export default {
   mounted () {
     const anchors = this.$el.getElementsByTagName('a')
     const r = new RegExp('^(?:[a-z]+:)?//', 'i')
+    const m = new RegExp('mailto', 'g')
 
     // add transitions to all internal links
     map(anchors, anchor => {
       const target = anchor.getAttribute('href')
-
-      if (!r.test(target)) {
+      if (!r.test(target) && !m.test(target)) {
         anchor.addEventListener('click', (e) => {
           e.preventDefault()
           this.$router.push(target)
         })
       }
+    })
+
+    let targets = this.$el.querySelectorAll('pre code')
+    targets.forEach((target) => {
+      hljs.highlightBlock(target)
     })
   },
   methods: {
@@ -31,88 +37,104 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
 
   .post-content{
     font-size: 1.15rem;
-  }
 
-  .post-content .cta{
-    display: inline-block;
-    margin: 1rem 0;
-    padding: .75rem 1.5rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 3px;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-family: var(--heading-font);
-  }
+    .cta{
+      display: inline-block;
+      margin: 1rem 0;
+      padding: .75rem 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-family: var(--heading-font);
 
-  .post-content .cta:hover{
-    background-color: var(--secondary-color);
-  }
+      &:hover{
+        background-color: var(--secondary-color);
+      }
+    }
 
-  .post-content ul{
-    list-style-type: square;
-    margin-left: 1rem;
-  }
+    ul{
+      list-style-type: square;
+      margin-left: 1rem;
 
-  .post-content ul li{
-    margin-bottom: 1rem;
-  }
+      li{
+        margin-bottom: 1rem;
+      }
+    }
 
-  .post-content a{
-    color: var(--secondary-color);
-    font-weight: 600;
-  }
+    a{
+      color: var(--primary-color);
+      font-weight: 600;
+    }
 
-  .post-content pre{
-    font-size: 1rem;
-    padding: 0;
-  }
+    blockquote{
+      margin-left: 1rem;
+      padding: 2rem;
+      background-color: var(--light-grey-color);
+      font-size: 1.2rem;
+      border-left: .5rem solid var(--primary-color);
+    }
 
-  .post-content pre code{
-    padding: 1rem;
-  }
+    figure{
+      max-width: 100%;
+      padding: 2rem 0;
+    }
 
-  .post-content blockquote{
-    margin-left: 1rem;
-    padding: 2rem;
-    background-color: var(--light-grey-color);
-    font-size: 1.2rem;
-    border-left: .5rem solid var(--primary-color);
-  }
+    img{
+      max-width: 100%;
+      height: auto;
 
-  .post-content figure{
-    max-width: 100%;
-    padding: 2rem 0;
-  }
+      &.alignright{
+        float: right;
+        margin-left: 1rem;
+      }
 
-  .post-content img{
-    max-width: 100%;
-    height: auto;
-  }
+      &.alignleft{
+        float: left;
+        margin-right: 1rem;
+      }
 
-  .post-content img.alignright{
-    float: right;
-    margin-left: 1rem;
-  }
+      &.aligncenter{
+        display: block;
+        margin: 1rem auto;
+      }
+    }
 
-  .post-content img.alignleft{
-    float: left;
-    margin-right: 1rem;
-  }
+    figcaption{
+      background-color: var(--light-grey-color);
+      padding: .25rem;
+      margin-top: -7px;
+      text-align: center;
+    }
 
-  .post-content img.aligncenter{
-    display: block;
-    margin: 1rem auto;
-  }
+    code{
+      font-size: .8rem;
+      background-color: var(--light-grey-color);
+      padding: .1rem;
+      font-family: var(--mono-font);
+    }
 
-  .post-content figcaption{
-    background-color: var(--light-grey-color);
-    padding: .25rem;
-    margin-top: -7px;
-    text-align: center;
+    pre{
+      padding: .25rem;
+      background-color: var(--light-grey-color);
+
+      code{
+        font-size: .9rem;
+      }
+      
+      .hljs{
+        top: 0;
+      }
+    }
+
+    .hljs{
+      display: inline-block;
+      position: relative;
+    }
   }
 </style>

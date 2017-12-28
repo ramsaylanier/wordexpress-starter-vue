@@ -4,6 +4,7 @@ import Home from '@/pages/Home'
 import Page from '@/components/page/page'
 import Post from '@/components/post/containers/PostContainer'
 import Category from '@/components/category/containers/CategoryContainer'
+import Header from '@/components/header/header'
 
 Vue.use(Router)
 
@@ -13,22 +14,33 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      components: {
+        page: Home
+      }
     },
     {
       path: '/:name',
       name: 'Page',
-      component: Page
+      components: {
+        header: Header,
+        page: Page
+      }
     },
     {
       path: '/post/:postname',
       name: 'Post',
-      component: Post
+      components: {
+        header: Header,
+        page: Post
+      }
     },
     {
       path: '/category/:id',
       name: 'Category',
-      component: Category
+      components: {
+        header: Header,
+        page: Category
+      }
     }
   ]
 })

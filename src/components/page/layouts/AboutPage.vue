@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="header" :style="renderHeaderImage()">
       <div class="header-content">
-        <h2 class="title">{{page.post_title}}</h2>
+        <h2 class="title">About</h2>
       </div>
     </div>
     <div class="body">
