@@ -1,23 +1,15 @@
 <template>
   <div id="app">
     <icons/>
-    <transition
-      appear
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enterHeader"
-      v-on:leave="leaveHeader"
-      v-bind:css="false"
-    >
-      <router-view name="header"></router-view>
-    </transition>
+    <app-header/>
     <div class="main">
-      <transition
+      <transition 
         appear
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
         v-bind:css="false"
       >
-        <router-view name="page"></router-view>
+        <router-view/>
       </transition>
     </div>
   </div>
@@ -39,37 +31,17 @@ export default {
       })
     },
     enter: function (el, done) {
-      console.log(el)
       TweenMax.to(el, 1, {
-        y: 0,
         alpha: 1,
         ease: Power4.easeOut
-      })
-      done()
-    },
-    enterHeader: function (el, done) {
-      TweenMax.fromTo(el, 1, {
-        y: -50
-      }, {
-        y: 0,
-        alpha: 1,
-        ease: Power4.easeOut
-      })
-      done()
-    },
-    leaveHeader: function (el, done) {
-      TweenMax.to(el, 1, {
-        y: -50,
-        ease: Power4.easeOut,
-        onComplete: done
       })
     }
   }
 }
 </script>
 
-<style lang="sass">
-@import url('https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700');
+<style>
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400,700');
 @import "styles/reset.css";
 @import "styles/typography.css";
 
@@ -79,19 +51,21 @@ export default {
 
 body{
   font-family: var(--copy-font);
-  background-color: var(--dark-color); 
   padding: 0;
   margin: 0;
 }
 
+.main{
+  margin-top: 40px;
+}
+
 :root{
-  --primary-color: #B60FE0;
-  --secondary-color: #acf3a7;
+  --primary-color: #7fbd42;
+  --secondary-color: #208cbe;
   --dark-color: #380436;
   --light-grey-color: #f3f3f3;
 
-  --heading-font: 'Oswald', sans-serif;
-  --copy-font: 'Source Sans Pro', sans-serif;
-  --mono-font: 'Source Code Pro', monospace;
+  --heading-font: 'Abril Fatface', serif;
+  --copy-font: 'Open Sans', sans-serif;
 }
 </style>

@@ -18,7 +18,7 @@
 
 <script>
 import CategoryContainer from './containers/CategoryContainer'
-import PostListItem from '@/components/post/layouts/PostListItem'
+import PostListItem from '@/components/post/PostListItem'
 import {TweenMax, Power4} from 'gsap'
 export default {
   name: 'category-list',
