@@ -9,7 +9,6 @@ import PostSingle from '../PostSingle'
 export default {
   name: 'posts-container',
   data () {
-    console.log(this.$route)
     return {
       post: {}
     }
