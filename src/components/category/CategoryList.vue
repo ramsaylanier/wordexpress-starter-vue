@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
+    <page-header :page="{post_title: category.name}" />
     <div class="page-content">
-      <h3>{{category.name}} Posts</h3>
       <transition
         appear
         @enter="enter"
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import PageHeader from '@/components/page/PageHeader'
 import CategoryContainer from './containers/CategoryContainer'
 import PostListItem from '@/components/post/PostListItem'
 import {TweenMax, Power4} from 'gsap'
@@ -26,7 +27,7 @@ export default {
   methods: {
     enter: function (el, done) {
       TweenMax.staggerFromTo(el.children, 1, {
-        y: -10,
+        y: 10,
         alpha: 0
       }, {
         y: 0,
@@ -37,7 +38,7 @@ export default {
     }
   },
   components: {
-    CategoryContainer, PostListItem
+    PageHeader, CategoryContainer, PostListItem
   }
 }
 </script>
@@ -55,7 +56,7 @@ export default {
 
   .page-content{
     grid-column: 2;
-    max-width: 980px;
+    max-width: 800px;
     width: 100%;
     justify-self: center;
     padding: 2rem 0;

@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <page-header :page="{post_title: 'Posts'}" />
     <div class="page-content">
       <posts-container>
         <transition
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import PageHeader from '@/components/page/PageHeader'
 import PostsContainer from './containers/PostsContainer'
 import PostListItem from './PostListItem'
 import {TweenMax, Power4} from 'gsap'
@@ -37,7 +39,7 @@ export default {
     }
   },
   components: {
-    PostsContainer, PostListItem
+    PageHeader, PostsContainer, PostListItem
   }
 }
 </script>
@@ -55,7 +57,7 @@ export default {
 
   .page-content{
     grid-column: 2;
-    max-width: 980px;
+    max-width: 800px;
     width: 100%;
     justify-self: center;
     padding: 2rem 0;

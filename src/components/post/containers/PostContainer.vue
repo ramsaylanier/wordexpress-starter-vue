@@ -9,16 +9,20 @@ import PostSingle from '../PostSingle'
 export default {
   name: 'posts-container',
   data () {
-    console.log(this.$route)
     return {
       post: {}
     }
   },
   apollo: {
-    post () {
-      return {
-        query: PostQuery,
-        variables: {
+    post: {
+      query: PostQuery,
+      prefetch ({route}) {
+        return {
+          name: route.params.postname
+        }
+      },
+      variables () {
+        return {
           name: this.$route.params.postname
         }
       }
