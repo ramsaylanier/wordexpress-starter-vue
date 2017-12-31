@@ -6,21 +6,12 @@ import * as getters from './getters'
 Vue.use(Vuex)
 
 const state = {
-  topics: [],
-  count: 0
+  activeMenuName: null
 }
 
 const mutations = {
-  TOPICS_LIST: (state, topics) => {
-    state.topics = topics
-  },
-
-  INCREMENT: (state) => {
-    state.count++
-  },
-
-  DECREMENT: (state) => {
-    state.count--
+  ACTIVE_MENU_NAME: (state, name) => {
+    state.activeMenuName = name
   }
 }
 
