@@ -7,29 +7,32 @@
 
 <script>
 import PostsQuery from '@/graphql/posts.gql'
+import {willPrefetch} from 'vue-apollo'
 
-export default {
+export default willPrefetch({
   name: 'posts-container',
   props: ['postType', 'limit', 'skip', 'order'],
   data () {
     return {
-      posts: [],
       isLoading: 0
     }
   },
   apollo: {
-    posts () {
-      return {
-        query: PostsQuery,
-        loadingKey: 'isLoading',
-        variables: {
-          post_type: this.postType,
-          limit: this.limit,
-          skip: this.skip,
-          order: this.order
+    posts: {
+      query: PostsQuery,
+      loadingKey: 'isLoading',
+      prefetch: ({route}) => {
+        console.log(this.default.props)
+        return {
+          post_type: this.default.props.postType
+        }
+      },
+      variables () {
+        return {
+          post_type: this.postType
         }
       }
     }
   }
-}
+})
 </script>

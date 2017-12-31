@@ -5,6 +5,7 @@ query Post($name: String) {
     post_parent
     post_content
     post_title
+    post_date
     thumbnail{
       src
       sizes{

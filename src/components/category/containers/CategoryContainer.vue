@@ -1,5 +1,5 @@
 <template>
-  <category-list :category="category"/>
+  <category-list v-if="category" :category="category"/>
 </template>
 
 <script>

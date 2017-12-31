@@ -3,7 +3,7 @@
     <icons/>
     <app-header/>
     <div class="main">
-      <transition 
+      <transition
         appear
         v-on:before-enter="beforeEnter"
         v-on:enter="enter"
@@ -32,16 +32,18 @@ export default {
     },
     enter: function (el, done) {
       TweenMax.to(el, 1, {
+        y: 0,
         alpha: 1,
         ease: Power4.easeOut
       })
+      done()
     }
   }
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:400,700');
+<style lang="sass">
+@import url('https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700');
 @import "styles/reset.css";
 @import "styles/typography.css";
 
@@ -51,21 +53,19 @@ export default {
 
 body{
   font-family: var(--copy-font);
+  background-color: var(--dark-color); 
   padding: 0;
   margin: 0;
 }
 
-.main{
-  margin-top: 40px;
-}
-
 :root{
-  --primary-color: #7fbd42;
-  --secondary-color: #208cbe;
+  --primary-color: #B60FE0;
+  --secondary-color: #acf3a7;
   --dark-color: #380436;
   --light-grey-color: #f3f3f3;
 
-  --heading-font: 'Abril Fatface', serif;
-  --copy-font: 'Open Sans', sans-serif;
+  --heading-font: 'Oswald', sans-serif;
+  --copy-font: 'Source Sans Pro', sans-serif;
+  --mono-font: 'Source Code Pro', monospace;
 }
 </style>

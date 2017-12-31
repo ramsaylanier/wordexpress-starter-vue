@@ -3,7 +3,7 @@ import Shortcodes from '@/shortcodes'
 export default function (content) {
   const trimmed = content.trim()
   const splitContent = trimmed.split('\n')
-  const voidTags = ['p', 'ul', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'code', 'pre', 'img']
+  const voidTags = ['p', 'div', 'header', 'footer', 'ul', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'code', 'pre', 'img', 'script', 'link', 'figure', 'figcaption', 'article', 'section']
   const shortcodes = ['caption', 'embed', 'gist', 'cta']
   let isCodeTag = false
 
@@ -24,6 +24,7 @@ export default function (content) {
         if (tag === 'code') {
           isCodeTag = true
         } else if (voidTags.indexOf(tag) === -1 && line.length > 1) {
+          console.log(tag)
           line = '<p>' + line + '</p>'
         }
       }

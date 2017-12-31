@@ -4,7 +4,7 @@ const express = require('express')
 const favicon = require('serve-favicon')
 const resolve = file => path.resolve(__dirname, file)
 const bodyParser = require('body-parser')
-const graphQlSchema = require('./schema')
+const graphQlSchema = require('./data/schema')
 const graphqlExpress = require('apollo-server-express').graphqlExpress
 const graphiqlExpress = require('apollo-server-express').graphiqlExpress
 const isProd = process.env.NODE_ENV === 'production'

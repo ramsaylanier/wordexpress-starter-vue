@@ -1,10 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="page-header" :style="renderHeaderImage()">
-      <div class="page-header-content"  v-html="renderHeader()">
-      </div>
-    </div>
-    <div class="page-content">
+    <page-header :page="page"/>
+    <div class="body">
       <post-content :content="page.post_content"/> 
     </div>
   </div>
@@ -12,6 +9,7 @@
 
 <script>
 import PostContent from '@/components/post/PostContent'
+import PageHeader from '../PageHeader'
 export default {
   name: 'front-page',
   props: ['page'],
@@ -26,12 +24,12 @@ export default {
       }
     },
     renderHeaderImage () {
-      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/page_header_bg.png')
+      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/post_header_bg.png')
       return `backgroundImage: url('${imageSrc}');`
     }
   },
   components: {
-    PostContent
+    PostContent, PageHeader
   }
 }
 </script>
@@ -42,30 +40,38 @@ export default {
     grid-template-columns: 5% 90% 5%;
   }
 
-  .page-header{
+  .header{
     grid-column: 1 / 4;
     grid-row: 1;
     padding: 2rem;
+
   }
 
-  .page-header-content{
-    max-width: 900px;
+  .header-content{
+    max-width: 800px;
     margin: 0 auto;
-  }
-
-  .page-content{
-    grid-column: 2;
-    max-width: 900px;
-    justify-self: center;
     padding: 2rem 0;
   }
-</style>
 
-<style>
-  .page-header h2{
+  .title{
     margin: 0;
     font-weight: 100;
     letter-spacing: .015em;
-    /* color: white; */
+  }
+
+  .body{
+    grid-column: 2;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    justify-self: center;
+    margin: -4rem auto 0rem auto;
+    z-index: 2;
+  }
+
+  .post-content{
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: white;
   }
 </style>

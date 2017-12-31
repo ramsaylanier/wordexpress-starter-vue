@@ -47,8 +47,9 @@ export default {
   }
 
   .post-content{
-    padding: 2rem 0;
-    max-width: 980px;
+    padding: 2rem;
+    max-width: 800px;
     margin: 0 auto;
+    background-color: white;
   }
 </style>
