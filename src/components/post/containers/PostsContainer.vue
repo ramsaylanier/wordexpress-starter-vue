@@ -22,7 +22,6 @@ export default willPrefetch({
       query: PostsQuery,
       loadingKey: 'isLoading',
       prefetch: ({route}) => {
-        console.log(this.default.props)
         return {
           post_type: this.default.props.postType
         }

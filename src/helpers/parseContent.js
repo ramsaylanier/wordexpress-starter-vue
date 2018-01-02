@@ -24,7 +24,6 @@ export default function (content) {
         if (tag === 'code') {
           isCodeTag = true
         } else if (voidTags.indexOf(tag) === -1 && line.length > 1) {
-          console.log(tag)
           line = '<p>' + line + '</p>'
         }
       }
