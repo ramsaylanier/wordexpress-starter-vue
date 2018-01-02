@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="page-content">
+    <div class="body">
       <post-content :content="page.post_content"/> 
     </div>
   </div>
@@ -9,7 +9,7 @@
 <script>
 import PostContent from '@/components/post/PostContent'
 export default {
-  name: 'front-page',
+  name: 'default-page',
   props: ['page'],
   components: {
     PostContent
@@ -23,10 +23,19 @@ export default {
     grid-template-columns: 5% 90% 5%;
   }
 
-  .page-content{
+  .body{
     grid-column: 2;
-    max-width: 900px;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
     justify-self: center;
-    padding: 2rem 0;
+    margin: 4rem auto 0rem auto;
+    z-index: 2;
+  }
+
+  .post-content{
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: white;
   }
 </style>

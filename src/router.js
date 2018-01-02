@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/Home'
 import Page from '@/components/page/page'
 import Post from '@/components/post/containers/PostContainer'
 import Category from '@/components/category/containers/CategoryContainer'
@@ -13,7 +12,10 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Page,
+      params: {
+        name: 'homepage'
+      }
     },
     {
       path: '/:name',
