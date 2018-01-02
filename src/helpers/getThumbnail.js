@@ -5,7 +5,5 @@ export default function (thumbnail, size) {
 
   const thumb = thumbnail.src.replace(/[^/]+$/g, file)
 
-  console.log(thumb)
-
   return thumb
 }
