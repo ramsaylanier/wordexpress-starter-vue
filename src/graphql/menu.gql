@@ -8,6 +8,10 @@ query Menu($menu: String!) {
         id
         post_title
         post_name
+        post_meta{
+          meta_value
+          meta_key
+        }
       }
       children{
         id

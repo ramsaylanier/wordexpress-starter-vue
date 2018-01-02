@@ -1,18 +1,22 @@
 <template>
-  <ul class="menu" v-if="menuItems">
+  <ul class="menu">
     <li class="item">
       <router-link to="/">Home</router-link>
     </li>
     <li class="item" v-for="item in menuItems" :key="item.id">
-      <router-link :to="`/${item.navitem.post_name}`">{{item.navitem.post_title}}</router-link>
+      <menu-link :link="item.navitem"/>
     </li>
   </ul>
 </template>
 
 <script>
+import MenuLink from './menuLink'
 export default {
   name: 'app-menu',
-  props: ['menuItems']
+  props: ['menuItems'],
+  components: {
+    MenuLink
+  }
 }
 </script>
 
@@ -26,6 +30,7 @@ export default {
 
   .item{
     padding: 0rem 1rem;
+
     a{
       text-decoration: none;
       color: $secondary-color;
