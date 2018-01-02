@@ -2,6 +2,8 @@
 
 > WordPress development using Vue, GraphQL, and Express.
 
+[Read the Introduction to Vue Press](https://medium.com/@rmmmsy/introducing-vuepress-wordpress-development-with-vue-and-graphql-f5063a97bb69)
+
 ## Node Version Requirement
 
 ```bash
