@@ -7,7 +7,7 @@
       v-on:leave="leave"
       v-bind:css="false"
     >
-      <component v-if="!isLoading" :is="getLayout()" :page="post"/>
+      <component v-if="post && !isLoading" :is="getLayout()" :page="post"/>
     </transition>
   </div>
 </template>
@@ -38,12 +38,12 @@ export default willPrefetch({
       loadingKey: 'isLoading',
       prefetch: ({route}) => {
         return {
-          name: route.params.name || 'Homepage'
+          name: route.params.name || 'homepage'
         }
       },
       variables () {
         return {
-          name: this.$route.params.name || this.name
+          name: this.$route.params.name || 'homepage'
         }
       }
     }
@@ -59,7 +59,6 @@ export default willPrefetch({
       })
     },
     enter: function (el, done) {
-      console.log('enter', el)
       TweenMax.to(el, 1, {
         y: 0,
         alpha: 1,
@@ -68,7 +67,6 @@ export default willPrefetch({
       done()
     },
     leave: function (el, done) {
-      console.log('leave', el)
       TweenMax.to(el, 1, {
         y: 0,
         alpha: 0,
