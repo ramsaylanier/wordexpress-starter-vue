@@ -1,6 +1,6 @@
 <template>
   <a v-if="type === 'custom'" class="link" :href="url">{{link.post_title}}</a>
-  <router-link v-else class="link" :to="link.post_name">{{link.post_title}}</router-link>
+  <router-link v-else class="link" :to="`/${link.post_name}`">{{link.post_title}}</router-link>
 </template>
 
 <script>
