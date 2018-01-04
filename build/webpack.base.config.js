@@ -3,6 +3,7 @@ const path = require('path')
 const Config = require('config')
 const fs = require('fs')
 const vueConfig = require('./vue-loader.config')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 fs.writeFileSync(path.resolve(__dirname, '../config/client.json'), JSON.stringify(Config))
 
@@ -47,7 +48,13 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: vueConfig
+        options: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+          },
+          extractCSS: true,
+        }
       },
       {
         test: /\.js$/,
@@ -69,5 +76,9 @@ module.exports = {
         }
       },
     ]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin("style.css")
+  ]
 }

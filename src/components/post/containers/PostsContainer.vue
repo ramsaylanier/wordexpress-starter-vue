@@ -23,7 +23,7 @@ export default willPrefetch({
       loadingKey: 'isLoading',
       prefetch: ({route}) => {
         return {
-          post_type: this.default.props.postType
+          post_type: this.a.props.postType
         }
       },
       variables () {
