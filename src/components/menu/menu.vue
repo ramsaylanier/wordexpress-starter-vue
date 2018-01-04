@@ -1,7 +1,7 @@
 <template>
   <ul class="menu">
     <li class="item">
-      <router-link to="/">Home</router-link>
+      <router-link :to="{name: 'Home'}">Home</router-link>
     </li>
     <li class="item" v-for="item in menuItems" :key="item.id">
       <menu-link :link="item.navitem"/>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped lang="sass">
+<style scoped lang="scss">
   @import "../../styles/colors";
 
   .menu{

@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700');
 @import "styles/reset.css";
 @import "styles/typography.css";
@@ -53,7 +53,7 @@ export default {
 
 body{
   font-family: var(--copy-font);
-  background-color: var(--dark-color); 
+  background-color: var(--dark-color);
   padding: 0;
   margin: 0;
 }

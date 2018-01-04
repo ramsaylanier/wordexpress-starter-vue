@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 
   .post-content{
     font-size: 1.15rem;

@@ -27,11 +27,6 @@ export default willPrefetch({
       isLoading: 0
     }
   },
-  watch: {
-    '$route.params.name': function (name) {
-      this.$apollo.queries.post.refetch({name: name})
-    }
-  },
   apollo: {
     post: {
       query: PageQuery,
@@ -77,3 +72,11 @@ export default willPrefetch({
   }
 })
 </script>
+
+<style scoped>
+  .page{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--dark-color);
+  }
+</style>
