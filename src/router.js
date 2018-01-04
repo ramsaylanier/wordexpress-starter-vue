@@ -6,33 +6,32 @@ import Category from '@/components/category/containers/CategoryContainer'
 
 Vue.use(Router)
 
-const router = new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Page,
-      params: {
-        name: 'homepage'
+export function createRouter () {
+  return new Router({
+    mode: 'history',
+    routes: [
+      {
+        path: '/',
+        name: 'Home',
+        component: Page
+      },
+      {
+        path: '/:name',
+        name: 'Page',
+        component: Page
+      },
+      {
+        path: '/post/:postname',
+        name: 'Post',
+        component: Post
+      },
+      {
+        path: '/category/:id',
+        name: 'Category',
+        component: Category
       }
-    },
-    {
-      path: '/:name',
-      name: 'Page',
-      component: Page
-    },
-    {
-      path: '/post/:postname',
-      name: 'Post',
-      component: Post
-    },
-    {
-      path: '/category/:id',
-      name: 'Category',
-      component: Category
-    }
-  ]
-})
+    ]
+  })
+}
 
-export default router
+export default createRouter
