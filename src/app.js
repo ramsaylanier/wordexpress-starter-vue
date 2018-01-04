@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './vuex/store'
-import router from './router.js'
+import createStore from './vuex/store'
+import createRouter from './router.js'
 import { sync } from 'vuex-router-sync'
 import {createApolloClient} from './apollo'
 import VueApollo from 'vue-apollo'
@@ -15,6 +15,8 @@ export function createApp (context) {
   const apolloProvider = new VueApollo({
     defaultClient: apolloClient
   })
+  const router = createRouter()
+  const store = createStore()
   sync(store, router)
   const app = new Vue({
     el: '#app',

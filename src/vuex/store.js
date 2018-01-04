@@ -15,9 +15,13 @@ const mutations = {
   }
 }
 
-export default new Vuex.Store({
-  state,
-  actions,
-  mutations,
-  getters
-})
+function createStore () {
+  return new Vuex.Store({
+    state,
+    actions,
+    mutations,
+    getters
+  })
+}
+
+export default createStore

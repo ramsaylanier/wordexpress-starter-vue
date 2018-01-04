@@ -32,6 +32,7 @@ if (isProd) {
 function createRenderer (bundle, template) {
   // https://github.com/vuejs/vue/blob/dev/packages/vue-server-renderer/README.md#why-use-bundlerenderer
   return require('vue-server-renderer').createBundleRenderer(bundle, {
+    runInNewContext: 'once',
     template,
     cache: require('lru-cache')({
       max: 1000,
@@ -85,10 +86,13 @@ app.get('*', (req, res) => {
     }
   }
 
-  renderer.renderToStream({ url: req.url })
-    .on('error', errorHandler)
-    .on('end', () => console.log(`whole request: ${Date.now() - s}ms`))
-    .pipe(res)
+  renderer.renderToString({ url: req.url }, (err, html) => {
+    if (err) {
+      errorHandler(err)
+    }
+    console.log(`whole request: ${Date.now() - s}ms`)
+    res.end(html)
+  })
 })
 
 const port = process.env.PORT || 3000
