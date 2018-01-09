@@ -1,5 +1,5 @@
 <template>
-  <div class="post-content" v-html="parseContent(content)"/> 
+  <div class="post-content" v-html="$parseContent(content)"/> 
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
     })
   },
   methods: {
-    parseContent
+    oldParseContent: parseContent
   }
 }
 </script>
