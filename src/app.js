@@ -6,9 +6,15 @@ import { sync } from 'vuex-router-sync'
 import {createApolloClient} from './apollo'
 import VueApollo from 'vue-apollo'
 import VueResource from 'vue-resource'
+import WordExpressPlugin from '@/core/plugin'
+import {WordExpressShortcodes, WordExpressHelpers} from 'wordexpress-tools'
 
 Vue.use(VueApollo)
 Vue.use(VueResource)
+Vue.use(WordExpressPlugin, {
+  shortcodes: WordExpressShortcodes,
+  helpers: WordExpressHelpers
+})
 
 export function createApp (context) {
   const apolloClient = createApolloClient(context.ssr)

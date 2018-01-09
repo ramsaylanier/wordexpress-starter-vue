@@ -3,10 +3,6 @@ const path = require('path')
 const express = require('express')
 const favicon = require('serve-favicon')
 const resolve = file => path.resolve(__dirname, file)
-const bodyParser = require('body-parser')
-const graphQlSchema = require('./data/schema')
-const graphqlExpress = require('apollo-server-express').graphqlExpress
-const graphiqlExpress = require('apollo-server-express').graphiqlExpress
 const isProd = process.env.NODE_ENV === 'production'
 
 const app = express()
@@ -48,23 +44,6 @@ const serve = (path, cache) => express.static(resolve(path), {
 app.use('/dist', serve('./dist', true))
 app.use(favicon(path.resolve(__dirname, 'src/assets/logo.png')))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
-
-app.use(
-  '/graphql',
-  bodyParser.json(),
-  graphqlExpress(req => {
-    return ({
-      schema: graphQlSchema
-    })
-  })
-)
-
-app.use(
-  '/graphiql',
-  graphiqlExpress({
-    endpointURL: '/graphql'
-  })
-)
 
 app.get('*', (req, res) => {
   if (!renderer) {
