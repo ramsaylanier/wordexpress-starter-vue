@@ -2,7 +2,7 @@
   <div class="post-list-item">
     <router-link class="post-link" :to="{name: 'Post', params: {postname: post.post_name}}">
       <h3 class="post-title">{{post.post_title}}</h3>
-      <p class="post-date">{{formatDate(post.post_date)}}</p>
+      <p class="post-date">{{$formatDate(post.post_date)}}</p>
     </router-link>
     <ul class="post-categories">
       <li class="post-category" v-for="cat in post.categories" :key="cat.name">
@@ -13,13 +13,9 @@
 </template>
 
 <script>
-import formatDate from '@/helpers/formatDate'
 export default {
   name: 'post-list-item',
-  props: ['post'],
-  methods: {
-    formatDate
-  }
+  props: ['post']
 }
 </script>
 

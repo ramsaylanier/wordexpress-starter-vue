@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import parseContent from '@/helpers/parseContent'
 import {map} from 'lodash'
 import hljs from 'highlightjs'
 
@@ -30,9 +29,6 @@ export default {
     targets.forEach((target) => {
       hljs.highlightBlock(target)
     })
-  },
-  methods: {
-    oldParseContent: parseContent
   }
 }
 </script>
