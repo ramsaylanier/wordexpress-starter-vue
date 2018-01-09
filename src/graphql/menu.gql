@@ -3,7 +3,6 @@ query Menu($menu: String!) {
     items {
       id
       order
-      post_title
       navitem{
         id
         post_title
