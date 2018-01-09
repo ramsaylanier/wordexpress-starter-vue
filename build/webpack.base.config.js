@@ -11,7 +11,7 @@ const theme = require('../config/client.json').theme
 module.exports = {
   devtool: '#source-map',
   entry: {
-    app: './src/client-entry.js',
+    app: './src/core/ssr/client-entry.js',
     vendor: ['vue', 'vue-router', 'vuex', 'vuex-router-sync', 'axios']
   },
   resolve: {

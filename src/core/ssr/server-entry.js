@@ -1,4 +1,4 @@
-import { createApp } from './core/app'
+import { createApp } from '../app'
 
 export default context => {
   return new Promise((resolve, reject) => {
