@@ -1,8 +1,10 @@
-# VuePress
+# WordExpress Starter - Vue (AKA VuePress)
 
 > WordPress development using Vue, GraphQL, and Express.
 
 [Read the Introduction to Vue Press](https://medium.com/@rmmmsy/introducing-vuepress-wordpress-development-with-vue-and-graphql-f5063a97bb69)
+
+This repo is a starting off point for working with WordExpress using Vue. Its meant to work with [WordExpress Server](https://github.com/ramsaylanier/WordExpress-Server). 
 
 ## Node Version Requirement
 
@@ -11,9 +13,13 @@ node 6.*
 node 7.*
 ```
 
+## Before Doing Anything Else
+
+Please make sure you have cloned the [WordExpress Server](https://github.com/ramsaylanier/WordExpress-Server) repo and have followed the instructions for getting it up and running. WordExpress server provides you with a connection to your WordPress database using GraphQL. 
+
 ## Config
 
-Using the `/config/sample.config.json` file as an example, create a `development.json` and `production.json` file. The file should contain connection details to your WordPress MySQL database for the respective environments. 
+Using the `/config/sample.config.json` file as an example, create a `development.json` and `production.json` file. As of now, this the config files just point to the url of where your WordExpress Server is running.
 
 ## Build Setup
 
