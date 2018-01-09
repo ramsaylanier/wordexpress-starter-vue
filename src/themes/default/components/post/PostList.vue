@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import PageHeader from '@/components/page/PageHeader'
+import PageHeader from '../page/PageHeader'
 import PostsContainer from './containers/PostsContainer'
 import PostListItem from './PostListItem'
 import {TweenMax, Power4} from 'gsap'

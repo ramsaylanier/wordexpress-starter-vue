@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PostsQuery from '@/graphql/posts.gql'
+import PostsQuery from 'core/graphql/posts.gql'
 import {willPrefetch} from 'vue-apollo'
 
 export default willPrefetch({

@@ -1,13 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
 import createStore from './vuex/store'
 import createRouter from './router.js'
 import { sync } from 'vuex-router-sync'
 import {createApolloClient} from './apollo'
 import VueApollo from 'vue-apollo'
 import VueResource from 'vue-resource'
-import WordExpressPlugin from '@/core/plugin'
+import WordExpressPlugin from './plugin'
 import {WordExpressShortcodes, WordExpressHelpers} from 'wordexpress-tools'
+import config from 'config'
 
 Vue.use(VueApollo)
 Vue.use(VueResource)
@@ -16,12 +16,18 @@ Vue.use(WordExpressPlugin, {
   helpers: WordExpressHelpers
 })
 
+const theme = config.theme
+console.log(theme)
+
+const App = require(`../themes/${theme}/App.vue`).default
+const routes = require(`../themes/${theme}/routes/index.js`).default
+
 export function createApp (context) {
   const apolloClient = createApolloClient(context.ssr)
   const apolloProvider = new VueApollo({
     defaultClient: apolloClient
   })
-  const router = createRouter()
+  const router = createRouter(routes)
   const store = createStore()
   sync(store, router)
   const app = new Vue({

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PostQuery from '@/graphql/post.gql'
+import PostQuery from 'core/graphql/post.gql'
 import PostSingle from '../PostSingle'
 
 export default {

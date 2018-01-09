@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import MenuContainer from '@/components/menu/menuContainer'
-import AppMenu from '@/components/menu/menu'
+import MenuContainer from '../menu/menuContainer'
+import AppMenu from '../menu/menu'
 export default {
   name: 'app-header',
   components: {
