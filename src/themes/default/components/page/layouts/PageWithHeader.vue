@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import PostContent from '@/components/post/PostContent'
+import PostContent from '../../post/PostContent'
 import PageHeader from '../PageHeader'
 export default {
   name: 'front-page',
@@ -24,7 +24,7 @@ export default {
       }
     },
     renderHeaderImage () {
-      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('@/assets/post_header_bg.png')
+      const imageSrc = this.page.thumbnail ? this.page.thumbnail : require('assets/post_header_bg.png')
       return `backgroundImage: url('${imageSrc}');`
     }
   },

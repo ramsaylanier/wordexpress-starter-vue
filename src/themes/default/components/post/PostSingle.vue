@@ -18,7 +18,7 @@ export default {
     renderHeaderImage () {
       const imageSrc = this.post.thumbnail
         ? this.$getThumbnail(this.post.thumbnail, 'large')
-        : require('@/assets/post_header_bg.png')
+        : require('assets/post_header_bg.png')
       return `backgroundImage: url('${imageSrc}');`
     }
   },

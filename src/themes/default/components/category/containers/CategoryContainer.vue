@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import CategoryQuery from '@/graphql/category.gql'
+import CategoryQuery from 'core/graphql/category.gql'
 import CategoryList from '../CategoryList'
 
 export default {

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Icons from '@/components/icons/icons'
-import AppHeader from '@/components/header/header'
+import Icons from './components/icons/icons'
+import AppHeader from './components/header/header'
 import {TweenMax, Power4} from 'gsap'
 export default {
   name: 'app',

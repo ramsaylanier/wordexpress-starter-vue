@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import PageQuery from '@/graphql/page.gql'
+import PageQuery from 'core/graphql/page.gql'
 import Layouts from './layouts/layouts'
 import {TweenMax, Power4} from 'gsap'
 import {willPrefetch} from 'vue-apollo'

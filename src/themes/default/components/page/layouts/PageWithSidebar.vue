@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import MenuContainer from '@/components/menu/menuContainer'
-import MenuLink from '@/components/menu/menuLink'
-import PostContent from '@/components/post/PostContent'
+import MenuContainer from '../../menu/menuContainer'
+import MenuLink from '../../menu/menuLink'
+import PostContent from '../../post/PostContent'
 export default {
   name: 'page-with-sidebar',
   props: ['page'],

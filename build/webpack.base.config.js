@@ -6,6 +6,7 @@ const vueConfig = require('./vue-loader.config')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 fs.writeFileSync(path.resolve(__dirname, '../config/client.json'), JSON.stringify(Config))
+const theme = require('../config/client.json').theme
 
 module.exports = {
   devtool: '#source-map',
@@ -18,9 +19,9 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       'src': path.resolve(__dirname, '../src'),
-      '@': path.resolve('src'),
+      'core': path.resolve(__dirname, '../src/core'),
+      '@': path.resolve('src/themes/default'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components'),
       'config': path.resolve('config/client.json')
     }
   },

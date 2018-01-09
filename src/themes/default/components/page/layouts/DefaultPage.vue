@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PostContent from '@/components/post/PostContent'
+import PostContent from '../../post/PostContent'
 export default {
   name: 'default-page',
   props: ['page'],

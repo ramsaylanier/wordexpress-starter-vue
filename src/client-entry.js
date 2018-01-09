@@ -1,4 +1,4 @@
-import { createApp } from './app'
+import { createApp } from './core/app'
 
 const { app, router, store } = createApp({ssr: false})
 

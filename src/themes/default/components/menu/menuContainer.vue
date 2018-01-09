@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MenuQuery from '@/graphql/menu.gql'
+import MenuQuery from 'core/graphql/menu.gql'
 export default {
   name: 'menu-container',
   props: ['menuName'],

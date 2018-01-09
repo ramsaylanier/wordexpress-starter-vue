@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import PageHeader from '@/components/page/PageHeader'
+import PageHeader from '../page/PageHeader'
 import CategoryContainer from './containers/CategoryContainer'
-import PostListItem from '@/components/post/PostListItem'
+import PostListItem from '../post/PostListItem'
 import {TweenMax, Power4} from 'gsap'
 export default {
   name: 'category-list',
