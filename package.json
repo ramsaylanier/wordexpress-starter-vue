@@ -1,5 +1,5 @@
 {
-  "name": "WordExpress Starter Kit - Vue",
+  "name": "wordexpress-starter-kit-vue",
   "version": "2.0.0",
   "description": "WordPress with Vue",
   "repository": {
@@ -60,7 +60,8 @@
     "vue-server-renderer": "^2.5.13",
     "vuex": "^2.3.0",
     "vuex-router-sync": "^4.1.2",
-    "wordexpress-schema": "^3.0.4"
+    "wordexpress-schema": "^3.0.4",
+    "wordexpress-tools": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",

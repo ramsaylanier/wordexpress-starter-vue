@@ -10,16 +10,14 @@
 
 <script>
 import PostContent from './PostContent'
-import getThumbnail from '@/helpers/getThumbnail'
 
 export default {
   name: 'post-single',
   props: ['post'],
   methods: {
-    getThumbnail,
     renderHeaderImage () {
       const imageSrc = this.post.thumbnail
-        ? getThumbnail(this.post.thumbnail, 'large')
+        ? this.$getThumbnail(this.post.thumbnail, 'large')
         : require('@/assets/post_header_bg.png')
       return `backgroundImage: url('${imageSrc}');`
     }

@@ -3,4 +3,12 @@ export default function install (Vue, options) {
   Vue.prototype.$parseContent = function (content) {
     return helpers.parseContent(content, shortcodes)
   }
+
+  Vue.prototype.$getThumbnail = function (thumbnail, size) {
+    return helpers.getThumbnail(thumbnail, size)
+  }
+
+  Vue.prototype.$formatDate = function (date) {
+    return helpers.formatDate(date)
+  }
 }
