@@ -16,13 +16,10 @@ Vue.use(WordExpressPlugin, {
   helpers: WordExpressHelpers
 })
 
-const theme = config.theme
-console.log(theme)
-
-const App = require(`../themes/${theme}/App.vue`).default
-const routes = require(`../themes/${theme}/routes/index.js`).default
-
 export function createApp (context) {
+  const theme = config.theme
+  const App = require(`../themes/${theme}/App.vue`).default
+  const routes = require(`../themes/${theme}/routes/index.js`).default
   const apolloClient = createApolloClient(context.ssr)
   const apolloProvider = new VueApollo({
     defaultClient: apolloClient

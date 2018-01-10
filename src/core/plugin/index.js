@@ -12,6 +12,10 @@ const WordExpressPlugin = {
     Vue.prototype.$formatDate = function (date) {
       return helpers.formatDate(date)
     }
+
+    Vue.prototype.$renderEmbed = function (embed) {
+      return helpers.renderEmbed(embed)
+    }
   }
 }
 
