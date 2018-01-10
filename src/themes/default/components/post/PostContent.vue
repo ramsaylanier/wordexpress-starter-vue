@@ -29,6 +29,11 @@ export default {
     targets.forEach((target) => {
       hljs.highlightBlock(target)
     })
+
+    let embeds = this.$el.querySelectorAll('.js-embed')
+    embeds.forEach((embed) => {
+      this.$renderEmbed(embed)
+    })
   }
 }
 </script>
