@@ -15,12 +15,16 @@ module.exports = {
     vendor: ['vue', 'vue-router', 'vuex', 'vuex-router-sync', 'axios']
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    modules: [
+      path.resolve(__dirname, '../src/core'),
+      path.resolve(__dirname, '../src/assets'),
+      path.resolve(__dirname, '../src/themes/multi-user'),
+      'node_modules'
+    ],
     extensions: ['.js', '.vue'],
     alias: {
-      'src': path.resolve(__dirname, '../src'),
       'core': path.resolve(__dirname, '../src/core'),
-      '@': path.resolve('src/themes/default'),
+      '@': path.resolve(__dirname, `../src/themes/${theme}`),
       'assets': path.resolve(__dirname, '../src/assets'),
       'config': path.resolve('config/client.json')
     }
@@ -38,23 +42,32 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, `../src/themes/${theme}`),
+          path.resolve(__dirname, `../src/core`)
+        ]
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        // include: path.resolve(__dirname, `../src/themes/${theme}`),
         options: {
           loaders: {
             scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
             sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
           },
-          extractCSS: true,
-        }
+          extractCSS: true
+        },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, `../src/themes/${theme}`),
+          path.resolve(__dirname, `../src/core`)
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

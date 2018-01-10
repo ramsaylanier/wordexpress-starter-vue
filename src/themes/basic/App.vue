@@ -44,8 +44,8 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700');
-@import "styles/reset.css";
-@import "styles/typography.css";
+@import "./styles/reset.css";
+@import "./styles/typography.css";
 
 *{
   box-sizing: border-box;

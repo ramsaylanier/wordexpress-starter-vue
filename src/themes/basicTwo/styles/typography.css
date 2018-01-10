@@ -1,0 +1,110 @@
+html {font-size: 1.125em;}
+
+body {
+  font-family: var(--copy-font);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  color: var(--dark-color);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {font-size: 0.707em;}
+
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+p {
+  margin-bottom: 1.3em;
+  font-family: var(--copy-font);
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+pre{
+  font-family: var(--mono-font);
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid darken(white, 5%);
+  background-color: darken(white, 10%);
+  font-size: .8rem;
+  overflow: auto;
+  margin-bottom: 1.5rem;
+}
+
+pre p{
+  font-family: var(--mono-font);
+  margin: 0;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+em{
+  font-style: italic;
+}
+
+strong{
+  font-weight: 700;
+}
+
+figcaption{
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.sans{
+  font-family: var(--heading-font);
+}
+
+.serif{
+  font-family: var(--copy-font);
+}
+
+.black{
+  font-weight: 900;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.thin{
+  font-weight: 100;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.center{
+  text-align: center;
+}
