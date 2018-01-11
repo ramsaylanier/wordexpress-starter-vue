@@ -7,7 +7,10 @@ import VueApollo from 'vue-apollo'
 import VueResource from 'vue-resource'
 import WordExpressPlugin from './plugin'
 import {WordExpressShortcodes, WordExpressHelpers} from 'wordexpress-tools'
-import config from 'config'
+
+// THEME
+import App from '@/App.vue'
+import routes from '@/routes/index.js'
 
 Vue.use(VueApollo)
 Vue.use(VueResource)
@@ -17,9 +20,6 @@ Vue.use(WordExpressPlugin, {
 })
 
 export function createApp (context) {
-  const theme = config.theme
-  const App = require(`../themes/${theme}/App.vue`).default
-  const routes = require(`../themes/${theme}/routes/index.js`).default
   const apolloClient = createApolloClient(context.ssr)
   const apolloProvider = new VueApollo({
     defaultClient: apolloClient
