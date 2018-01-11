@@ -15,18 +15,13 @@ module.exports = {
     vendor: ['vue', 'vue-router', 'vuex', 'vuex-router-sync', 'axios']
   },
   resolve: {
-    modules: [
-      path.resolve(__dirname, '../src/core'),
-      path.resolve(__dirname, '../src/assets'),
-      path.resolve(__dirname, '../src/themes/multi-user'),
-      'node_modules'
-    ],
+    modules: [path.resolve(__dirname, '../src'), 'node_modules'],
     extensions: ['.js', '.vue'],
     alias: {
       'core': path.resolve(__dirname, '../src/core'),
       '@': path.resolve(__dirname, `../src/themes/${theme}`),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'config': path.resolve('config/client.json')
+      'config': path.resolve('config/client.json'),
     }
   },
 
