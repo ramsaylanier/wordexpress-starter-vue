@@ -16,6 +16,10 @@ const WordExpressPlugin = {
     Vue.prototype.$renderEmbed = function (embed) {
       return helpers.renderEmbed(embed)
     }
+
+    Vue.prototype.$getAvatarLink = function (email, size) {
+      return helpers.getAvatarLink(email, size)
+    }
   }
 }
 
