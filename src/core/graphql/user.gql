@@ -1,0 +1,11 @@
+query User($name: String) {
+  user(name: $name){
+    display_name
+    user_email
+    posts{
+      post_name
+      post_title
+      post_date
+    }
+  }
+}

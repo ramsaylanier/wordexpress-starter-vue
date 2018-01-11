@@ -17,5 +17,9 @@ query Post($name: String) {
       meta_value
       meta_key
     }
+    author{
+      user_nicename
+      display_name
+    }
   }
 }
