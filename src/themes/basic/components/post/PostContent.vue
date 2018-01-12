@@ -5,10 +5,52 @@
 <script>
 import {map} from 'lodash'
 import hljs from 'highlightjs'
+import gql from 'graphql-tag'
 
 export default {
   name: 'post-content',
   props: ['content'],
+  data () {
+    return {
+      attachments: [],
+      galleryIds: []
+    }
+  },
+  apollo: {
+    attachments: {
+      query: gql`
+        query Attachments($ids: [Int]){
+          attachments(ids: $ids){
+            id
+            src
+            sizes{
+              size
+              file
+            }
+          }
+        }
+      `,
+      variables () {
+        return {
+          ids: this.galleryIds
+        }
+      }
+    }
+  },
+  watch: {
+    attachments (attachments) {
+      attachments.map(attachment => {
+        const img = document.getElementById(`image-${attachment.id}`)
+        const size = img.dataset.size
+
+        if (size === 'full') {
+          img.src = attachment.src
+        } else {
+          img.src = this.$getThumbnail(attachment, size)
+        }
+      })
+    }
+  },
   mounted () {
     const anchors = this.$el.getElementsByTagName('a')
     const r = new RegExp('^(?:[a-z]+:)?//', 'i')
@@ -33,6 +75,11 @@ export default {
     let embeds = this.$el.querySelectorAll('.js-embed')
     embeds.forEach((embed) => {
       this.$renderEmbed(embed)
+    })
+
+    let galleries = this.$el.querySelectorAll('.js-gallery')
+    galleries.forEach((gallery) => {
+      this.galleryIds = gallery.dataset.ids.split(',')
     })
   }
 }

@@ -17,6 +17,10 @@ const WordExpressPlugin = {
       return helpers.renderEmbed(embed)
     }
 
+    Vue.prototype.$renderGallery = function (gallery) {
+      return helpers.renderGallery(gallery)
+    }
+
     Vue.prototype.$getAvatarLink = function (email, size) {
       return helpers.getAvatarLink(email, size)
     }
