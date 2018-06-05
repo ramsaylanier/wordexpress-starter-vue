@@ -99,7 +99,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^2.4.0",
     "sw-precache-webpack-plugin": "^0.9.1",
-    "vue-loader": "latest",
+    "vue-loader": "^13.6.2",
     "vue-template-compiler": "^2.0.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2",
