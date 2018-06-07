@@ -1,9 +1,9 @@
 const path = require('path')
-// const projectRoot = path.resolve(__dirname, '../')
 const Config = require('config')
 const fs = require('fs')
 const vueConfig = require('./vue-loader.config')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 fs.writeFileSync(path.resolve(__dirname, '../config/client.json'), JSON.stringify(Config))
 const theme = require('../config/client.json').theme
@@ -45,15 +45,22 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        // include: path.resolve(__dirname, `../src/themes/${theme}`),
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
-          },
-          extractCSS: true
-        },
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          use: 'css-loader',
+          fallback: 'vue-style-loader'
+        })
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.js$/,
@@ -82,6 +89,7 @@ module.exports = {
   },
 
   plugins: [
+    new VueLoaderPlugin(),
     new ExtractTextPlugin("style.css")
   ]
 }

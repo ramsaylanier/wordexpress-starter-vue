@@ -3,7 +3,6 @@ node_modules/
 dist/
 npm-debug.log
 .vscode/
-yarn.lock
 config/client.json
 config/development.json
 config/production.json
