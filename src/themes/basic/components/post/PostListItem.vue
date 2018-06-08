@@ -14,50 +14,51 @@
 
 <script>
 export default {
-  name: 'post-list-item',
-  props: ['post']
-}
+  name: "post-list-item",
+  props: ["post"]
+};
 </script>
 
 <style scoped>
-  .post-list-item{
-    background-color: var(--light-grey-color);
-    width: 100%;
-    display: grid;
-    box-shadow: 8px 8px 8px -8px var(--dark-color);
-  }
+.post-list-item {
+  background-color: var(--light-grey-color);
+  width: 100%;
+  display: grid;
+  box-shadow: 8px 8px 8px -8px var(--dark-color);
+}
 
-  .post-link:hover .post-title, .post-link:hover .post-date{
-    color: var(--primary-color);
-  }
+.post-link:hover .post-title,
+.post-link:hover .post-date {
+  color: var(--primary-color);
+}
 
-  .post-link{
-    display: block;
-    padding: 2rem;
-    text-decoration: none;
-  }
+.post-link {
+  display: block;
+  padding: 2rem;
+  text-decoration: none;
+}
 
-  .post-title{
-    margin: 0;
-  }
+.post-title {
+  margin: 0;
+}
 
-  .post-date{
-    margin: 0;
-  }
+.post-date {
+  margin: 0;
+}
 
-  .post-categories{
-    border-top: 1px solid var(--dark-color);
-    padding: .5rem 2rem;
-    align-self: center;
-    display: flex;
-  }
+.post-categories {
+  border-top: 1px solid var(--dark-color);
+  padding: 0.5rem 2rem;
+  align-self: center;
+  display: flex;
+}
 
-  .post-category{
-    margin-right: 1rem;
-  }
+.post-category {
+  margin-right: 1rem;
+}
 
-  .post-category a{
-    text-decoration: none;
-    font-size: .8rem;
-  }
+.post-category a {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
 </style>

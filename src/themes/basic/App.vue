@@ -16,56 +16,57 @@
 </template>
 
 <script>
-import Icons from './components/icons/icons'
-import AppHeader from './components/header/header'
-import {TweenMax, Power4} from 'gsap'
+import Icons from "./components/icons/icons";
+import AppHeader from "./components/header/header";
+import { TweenMax, Power4 } from "gsap";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Icons, AppHeader
+    Icons,
+    AppHeader
   },
   methods: {
-    beforeEnter: function (el) {
+    beforeEnter: function(el) {
       TweenMax.set(el, {
         alpha: 0
-      })
+      });
     },
-    enter: function (el, done) {
+    enter: function(el, done) {
       TweenMax.to(el, 1, {
         y: 0,
         alpha: 1,
         ease: Power4.easeOut
-      })
-      done()
+      });
+      done();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700');
+@import url("https://fonts.googleapis.com/css?family=Oswald:300|Source+Sans+Pro:300,400|Source+Code+Pro:400,700");
 @import "./styles/reset.css";
 @import "./styles/typography.css";
 
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: var(--copy-font);
   background-color: var(--dark-color);
   padding: 0;
   margin: 0;
 }
 
-:root{
-  --primary-color: #B60FE0;
+:root {
+  --primary-color: #b60fe0;
   --secondary-color: #acf3a7;
   --dark-color: #380436;
   --light-grey-color: #f3f3f3;
 
-  --heading-font: 'Oswald', sans-serif;
-  --copy-font: 'Source Sans Pro', sans-serif;
-  --mono-font: 'Source Code Pro', monospace;
+  --heading-font: "Oswald", sans-serif;
+  --copy-font: "Source Sans Pro", sans-serif;
+  --mono-font: "Source Code Pro", monospace;
 }
 </style>

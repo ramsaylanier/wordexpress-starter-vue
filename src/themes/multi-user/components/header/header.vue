@@ -9,39 +9,40 @@
 </template>
 
 <script>
-import MenuContainer from '../menu/menuContainer'
-import AppMenu from '../menu/menu'
+import MenuContainer from "../menu/menuContainer";
+import AppMenu from "../menu/menu";
 export default {
-  name: 'app-header',
+  name: "app-header",
   components: {
-    MenuContainer, AppMenu
+    MenuContainer,
+    AppMenu
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-  @import "../../styles/colors.scss";
+@import "../../styles/colors.scss";
 
-  .header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-  }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
 
-  .wrapper{
-    background: darken($dark-color, 3%);
-    height: 100%;
-    padding: 0rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
-    border-color: $secondary-color;
-  }
+.wrapper {
+  background: darken($dark-color, 3%);
+  height: 100%;
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: $secondary-color;
+}
 </style>

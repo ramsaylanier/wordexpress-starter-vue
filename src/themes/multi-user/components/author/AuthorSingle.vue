@@ -28,61 +28,69 @@
 </template>
 
 <script>
-import AuthorContainer from './containers/AuthorContainer'
-import PageHeader from '@/components/page/PageHeader'
-import PostListItem from '@/components/post/PostListItem'
-import {TweenMax, Power4} from 'gsap'
+import AuthorContainer from "./containers/AuthorContainer";
+import PageHeader from "@/components/page/PageHeader";
+import PostListItem from "@/components/post/PostListItem";
+import { TweenMax, Power4 } from "gsap";
 export default {
-  name: 'author-single',
+  name: "author-single",
   components: {
-    AuthorContainer, PageHeader, PostListItem
+    AuthorContainer,
+    PageHeader,
+    PostListItem
   },
   methods: {
-    enter: function (el, done) {
-      TweenMax.staggerFromTo(el.children, 2, {
-        y: 20,
-        alpha: 0
-      }, {
-        y: 0,
-        alpha: 1,
-        ease: Power4.easeOut,
-        onComplete: done
-      }, 0.1)
+    enter: function(el, done) {
+      TweenMax.staggerFromTo(
+        el.children,
+        2,
+        {
+          y: 20,
+          alpha: 0
+        },
+        {
+          y: 0,
+          alpha: 1,
+          ease: Power4.easeOut,
+          onComplete: done
+        },
+        0.1
+      );
     }
   }
-}
+};
 </script>
 <style scoped lang="scss">
-  @import '../../styles/colors.scss';
-  .author-header{
-    display: flex;
-    justify-content: center;
-    padding: 4rem 0;
-  }
-    
-  .wrapper{
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+@import "../../styles/colors.scss";
+.author-header {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
 
-  .avatar{
-    position: absolute;
-    top: -75px;
-    right: 0;
-    z-index: 2;
-    img{
-      border-radius: 50%;
-      border: 5px solid $dark-color;
-      box-sizing: content-box;
-    }
-  }
+.wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  .posts{
-    position: relative;
-    display: grid;
-    grid-row-gap: 1rem;
-    padding-top: 2rem;
-    z-index: 1;
+.avatar {
+  position: absolute;
+  top: -75px;
+  right: 0;
+  z-index: 2;
+  img {
+    border-radius: 50%;
+    border: 5px solid $dark-color;
+    box-sizing: content-box;
   }
+}
+
+.posts {
+  position: relative;
+  display: grid;
+  grid-row-gap: 1rem;
+  padding-top: 2rem;
+  z-index: 1;
+}
 </style>

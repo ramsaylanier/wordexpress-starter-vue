@@ -1,3 +1,7 @@
+# V.3.0.0-beta
+
+- Completely replaced build system using Vue CLI 3.0 (beta release)
+
 # V.2.1
 
 - Created a multi-user theme to display author profile pages. 

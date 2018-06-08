@@ -1,13 +1,13 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
-export function createRouter (routes) {
+export function createRouter(routes) {
   return new Router({
-    mode: 'history',
+    mode: "history",
     routes
-  })
+  });
 }
 
-export default createRouter
+export default createRouter;

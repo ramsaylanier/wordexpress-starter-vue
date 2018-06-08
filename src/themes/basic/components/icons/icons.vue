@@ -9,10 +9,9 @@
 
 <script>
 export default {
-  name: 'icons'
-}
+  name: "icons"
+};
 </script>
 
 <style>
-
 </style>

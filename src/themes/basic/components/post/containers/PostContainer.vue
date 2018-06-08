@@ -3,33 +3,33 @@
 </template>
 
 <script>
-import PostQuery from 'core/graphql/post.gql'
-import PostSingle from '../PostSingle'
+import PostQuery from "core/graphql/post.gql";
+import PostSingle from "../PostSingle";
 
 export default {
-  name: 'posts-container',
-  data () {
+  name: "posts-container",
+  data() {
     return {
       post: {}
-    }
+    };
   },
   apollo: {
     post: {
       query: PostQuery,
-      prefetch ({route}) {
+      prefetch({ route }) {
         return {
           name: route.params.postname
-        }
+        };
       },
-      variables () {
+      variables() {
         return {
           name: this.$route.params.postname
-        }
+        };
       }
     }
   },
   components: {
     PostSingle
   }
-}
+};
 </script>

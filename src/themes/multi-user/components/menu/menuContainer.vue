@@ -6,24 +6,24 @@
 </template>
 
 <script>
-import MenuQuery from 'core/graphql/menu.gql'
+import MenuQuery from "core/graphql/menu.gql";
 export default {
-  name: 'menu-container',
-  props: ['menuName'],
-  data () {
+  name: "menu-container",
+  props: ["menuName"],
+  data() {
     return {
       menus: {}
-    }
+    };
   },
   apollo: {
-    menus () {
+    menus() {
       return {
         query: MenuQuery,
         variables: {
           menu: this.menuName
         }
-      }
+      };
     }
   }
-}
+};
 </script>

@@ -1,1 +1,1 @@
-export const getActiveMenuName = state => state.getActiveMenuName
+export const getActiveMenuName = state => state.getActiveMenuName;

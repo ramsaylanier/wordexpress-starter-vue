@@ -9,45 +9,45 @@
 </template>
 
 <script>
-import PostContent from './PostContent'
+import PostContent from "./PostContent";
 
 export default {
-  name: 'post-single',
-  props: ['post'],
+  name: "post-single",
+  props: ["post"],
   methods: {
-    renderHeaderImage () {
+    renderHeaderImage() {
       const imageSrc = this.post.thumbnail
-        ? this.$getThumbnail(this.post.thumbnail, 'large')
-        : require('assets/post_header_bg.png')
-      return `backgroundImage: url('${imageSrc}');`
+        ? this.$getThumbnail(this.post.thumbnail, "large")
+        : require("assets/post_header_bg.png");
+      return `backgroundImage: url('${imageSrc}');`;
     }
   },
   components: {
     PostContent
   }
-}
+};
 </script>
 
 <style scoped>
-  .post-header{
-    height: 300px;
-    width: 100%;
-    background-size: cover;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.post-header {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .post-title{
-    margin: 0;
-    font-size: 4rem;
-  }
+.post-title {
+  margin: 0;
+  font-size: 4rem;
+}
 
-  .post-content{
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: white;
-  }
+.post-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+}
 </style>

@@ -10,32 +10,31 @@
 </template>
 
 <script>
-import MenuLink from './menuLink'
+import MenuLink from "./menuLink";
 export default {
-  name: 'app-menu',
-  props: ['menuItems'],
+  name: "app-menu",
+  props: ["menuItems"],
   components: {
     MenuLink
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-  @import "../../styles/colors";
+@import "../../styles/colors";
 
-  .menu{
-    padding: 0;
-    display: flex;
+.menu {
+  padding: 0;
+  display: flex;
+}
+
+.item {
+  padding: 0rem 1rem;
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 0.9rem;
   }
-
-  .item{
-    padding: 0rem 1rem;
-
-    a{
-      text-decoration: none;
-      color: $secondary-color;
-      font-size: .9rem;
-    }
-  }
+}
 </style>
-
