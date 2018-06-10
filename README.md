@@ -2,6 +2,8 @@
 
 > WordPress development using Vue, GraphQL, and Express.
 
+** NOTE ** This is the 3.0-beta branch, which use's Vue CLI 3.0 (which is currently in beta). The master branch uses Vue CLI 2.0 with vue-loader V13.
+
 [Read the Introduction to Vue Press](https://medium.com/@rmmmsy/introducing-vuepress-wordpress-development-with-vue-and-graphql-f5063a97bb69)
 
 This repo is a starting off point for working with WordExpress using Vue. Its meant to work with [WordExpress Server](https://github.com/ramsaylanier/WordExpress-Server). 
