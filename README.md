@@ -8,34 +8,27 @@
 
 This repo is a starting off point for working with WordExpress using Vue. Its meant to work with [WordExpress Server](https://github.com/ramsaylanier/WordExpress-Server). 
 
-## Node Version Requirement
-
-```bash
-node 6.*
-node 7.*
-```
-
 ## Before Doing Anything Else
 
 Please make sure you have cloned the [WordExpress Server](https://github.com/ramsaylanier/WordExpress-Server) repo and have followed the instructions for getting it up and running. WordExpress server provides you with a connection to your WordPress database using GraphQL. 
 
 ## Config
 
-Using the `/config/sample.config.json` file as an example, create a `development.json` and `production.json` file. As of now, this the config files just point to the url of where your WordExpress Server is running, and which theme in the `src/themes` directory to use. 
+Using the `/config/sample-client.config.json` file as an example, create a `client.json` and file. As of now, this the config files just point to the url of where your WordExpress Server is running, and which theme in the `src/themes` directory to use. 
 
-## Build Setup
+## Development 
 
 ``` bash
-npm install
-npm run build
-npm start
+yarn
+yarn serve
 ```
 
-## Development Setup
+## Production
 
 ```bash
-npm install
-npm run dev
+yarn
+yarn build
+yarn start
 ```
 
 # Working With WordPress
