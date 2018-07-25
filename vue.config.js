@@ -5,7 +5,7 @@ const merge = require("lodash.merge");
 const { theme } = require("./config/client.json");
 const path = require("path");
 
-console.log(theme);
+console.log(`Current Theme: ${theme}`);
 
 const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 

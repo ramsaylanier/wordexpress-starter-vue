@@ -1,35 +1,13 @@
 {
   "name": "wordexpress-starter-kit-vue",
   "version": "3.0.0-beta",
-  "description": "WordPress with Vue",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ramsaylanier/VuePress"
-  },
-  "keywords": [
-    "vue",
-    "vuex",
-    "vue-router",
-    "webpack",
-    "starter",
-    "server-side",
-    "boilerplate",
-    "wordpress"
-  ],
-  "author": "ramsay lanier <ramsaylanier@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ramsaylanier/VuePress/issues"
-  },
-  "homepage": "https://github.com/ramsaylanier/VuePress#readme",
   "private": false,
   "scripts": {
-    "serve": "npm run build && node scripts/serve",
+    "serve": "vue-cli-service serve",
     "build": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:client && mv bundle dist/vue-ssr-server-bundle.json",
     "lint": "vue-cli-service lint",
     "build:client": "vue-cli-service build",
     "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
-    "start": "cross-env NODE_ENV=production node scripts/start",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -62,7 +40,7 @@
     "lodash.merge": "^4.6.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
-    "vue-cli-plugin-apollo": "^0.13.6",
+    "vue-cli-plugin-apollo": "^0.16.0",
     "vue-template-compiler": "^2.5.16",
     "webpack-node-externals": "^1.7.2"
   },
@@ -70,5 +48,26 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ramsaylanier/VuePress#readme",
+  "author": "ramsay lanier <ramsaylanier@gmail.com>",
+  "keywords": [
+    "vue",
+    "vuex",
+    "vue-router",
+    "webpack",
+    "starter",
+    "server-side",
+    "boilerplate",
+    "wordpress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramsaylanier/VuePress"
+  },
+  "description": "WordPress with Vue",
+  "bugs": {
+    "url": "https://github.com/ramsaylanier/VuePress/issues"
+  }
 }

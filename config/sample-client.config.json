@@ -1,4 +1,4 @@
 {
-  "wordexpressServerHost": "localhost:4000",
+  "wordexpressServerHost": "http://localhost:4000",
   "theme": "basic"
 }

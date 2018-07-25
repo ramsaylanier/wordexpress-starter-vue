@@ -4,9 +4,9 @@ import {
   createApolloClient,
   restartWebsockets
 } from "vue-cli-plugin-apollo/graphql-client";
-import { HttpLink } from "apollo-link-http";
 import config from "config";
-import fetch from "node-fetch";
+
+const { wordexpressServerHost } = config;
 
 // Install the vue plugin
 Vue.use(VueApollo);
@@ -14,14 +14,26 @@ Vue.use(VueApollo);
 // Name of the localStorage item
 const AUTH_TOKEN = "apollo-token";
 
-const { wordexpressServerHost } = config;
-const link = new HttpLink({
-  uri: `http://${wordexpressServerHost}/graphql`,
-  fetch
+// Http endpoint
+const httpEndpoint = wordexpressServerHost;
+
+// Files URL root
+export const filesRoot =
+  process.env.VUE_APP_FILES_ROOT ||
+  httpEndpoint.substr(0, httpEndpoint.indexOf("/graphql"));
+
+Object.defineProperty(Vue.prototype, "$filesRoot", {
+  get: () => filesRoot
 });
 
 // Config
 const defaultOptions = {
+  // You can use `https` for secure connection (recommended in production)
+  httpEndpoint,
+  // You can use `wss` for secure connection (recommended in production)
+  // Use `null` to disable subscriptions
+  wsEndpoint: null,
+  // LocalStorage token
   tokenName: AUTH_TOKEN,
   // Enable Automatic Query persisting with Apollo Engine
   persisting: false,
@@ -29,8 +41,10 @@ const defaultOptions = {
   // You need to pass a `wsEndpoint` for this to work
   websocketsOnly: false,
   // Is being rendered on the server?
+  ssr: true
+
   // Override default http link
-  link: link
+  // link: myLink
 
   // Override default cache
   // cache: myCache
