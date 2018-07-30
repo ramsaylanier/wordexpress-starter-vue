@@ -26,7 +26,6 @@ Using the `/config/sample.config.json` file as an example, create a `config.json
 ``` bash
 npm install
 npm run build
-npm start
 ```
 
 ## Development Setup
