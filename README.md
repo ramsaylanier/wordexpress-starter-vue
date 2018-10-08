@@ -19,21 +19,21 @@ Please make sure you have cloned the [WordExpress Server](https://github.com/ram
 
 ## Config
 
-Using the `/config/sample.config.json` file as an example, create a `config.json` file. As of now, this the config files just point to the url of where your WordExpress Server is running, and which theme in the `src/themes` directory to use. 
+Using the `/config/sample-client.config.json` file as an example, create a `client.json` file. As of now, this the config files just point to the url of where your WordExpress Server is running, and which theme in the `src/themes` directory to use. 
 
 ## Build Setup
 
 ``` bash
-npm install
-npm run build
-npm start
+yarn
+yarn build
+yarn start
 ```
 
 ## Development Setup
 
 ```bash
-npm install
-npm run serve
+yarn
+yarn serve
 ```
 
 # Working With WordPress

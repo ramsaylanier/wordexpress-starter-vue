@@ -16,6 +16,11 @@ const createApiFile = TARGET_NODE
 const target = TARGET_NODE ? "server" : "client";
 
 module.exports = {
+  pluginOptions: {
+    ssr: {
+      entry: target => `./src/core/ssr/entry-${target}`
+    }
+  },
   configureWebpack: () => ({
     entry: `./src/core/ssr/entry-${target}`,
     target: TARGET_NODE ? "node" : "web",
