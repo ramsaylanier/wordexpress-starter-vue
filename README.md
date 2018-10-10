@@ -24,14 +24,12 @@ Using the `/config/sample-client.config.json` file as an example, create a `clie
 ## Build Setup
 
 ``` bash
-<<<<<<< HEAD
 yarn
 yarn build
 yarn start
 =======
 npm install
 npm run build
->>>>>>> aaf1b5b3245bc309d3a9703aa2cf1149088a35d0
 ```
 
 ## Development Setup
