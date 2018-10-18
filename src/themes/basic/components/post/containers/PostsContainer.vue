@@ -7,9 +7,8 @@
 
 <script>
 import PostsQuery from "core/graphql/posts.gql";
-import { willPrefetch } from "vue-apollo";
 
-export default willPrefetch({
+export default {
   name: "posts-container",
   props: ["postType", "limit", "skip", "order"],
   data() {
@@ -33,5 +32,5 @@ export default willPrefetch({
       }
     }
   }
-});
+};
 </script>

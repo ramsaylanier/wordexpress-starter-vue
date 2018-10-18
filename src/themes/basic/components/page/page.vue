@@ -16,9 +16,8 @@
 import PageQuery from "core/graphql/page.gql";
 import Layouts from "./layouts/layouts";
 import { TweenMax, Power4 } from "gsap";
-import { willPrefetch } from "vue-apollo";
 
-export default willPrefetch({
+export default {
   name: "page",
   props: ["name"],
   data() {
@@ -72,7 +71,7 @@ export default willPrefetch({
       done();
     }
   }
-});
+};
 </script>
 
 <style scoped>
